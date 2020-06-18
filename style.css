@@ -68,6 +68,7 @@ header nav {
   min-height: 10vh;
   margin: auto;
   align-items: center;
+  z-index: 2;
 }
 
 header nav h1 {
@@ -91,6 +92,10 @@ header nav .logo {
 header nav .nav-links {
   font-family: "amiri", "Times New Roman", Times, serif;
   font-weight: 600;
+}
+
+header #menu {
+  display: none;
 }
 
 /* Hero section */
@@ -211,9 +216,6 @@ header nav .nav-links {
 }
 
 /* Gallery section */
-#gallery {
-  overflow: hidden;
-}
 
 #gallery .images {
   display: grid;
@@ -242,6 +244,108 @@ header nav .nav-links {
 
 .gallery5 {
   grid-column: 2/4;
+}
+
+/* Contact section */
+#contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90vh;
+  width: 90%;
+  margin: 0 0 0 auto;
+  flex-wrap: wrap;
+}
+
+#contact img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  flex: 1 1 30rem;
+}
+
+#contact .text-content {
+  flex: 2 1 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 8rem;
+}
+#contact .text-content .first-line {
+  font-size: 4rem;
+  font-weight: 700;
+  font-family: "amiri-bold", "Times New Roman", Times, serif;
+}
+
+#contact .text-content .second-line {
+  color: #46566a;
+  font-size: 8rem;
+  font-weight: 700;
+  font-family: "amiri-bold", "Times New Roman", Times, serif;
+  margin-top: -5rem;
+  margin-bottom: -2rem;
+}
+
+#contact #email {
+  width: 25rem;
+  height: 2.8rem;
+  outline: none;
+  background-color: #c4c4c4;
+  border: none;
+  font-size: 1.2rem;
+  padding: 0.8rem;
+  font-family: "amiri", "Times New Roman", Times, serif;
+}
+
+#contact #submit-btn {
+  margin: 2rem 0;
+  padding: 0.2rem 10.4rem;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  font-family: "amiri", "Times New Roman", Times, serif;
+  background-color: #46566a;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+
+#contact #submit-btn:hover {
+  background-color: #354252;
+}
+
+/* Footer */
+footer {
+  background-color: #414141;
+  color: white;
+  font-family: "vibes", sans-serif;
+}
+
+footer h2 {
+  font-weight: 500;
+  flex: 3 1 30rem;
+}
+
+footer .footer-content {
+  min-height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+footer .social-icons {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1 1 30rem;
+}
+
+footer .social-icons img {
+  width: 80%;
 }
 
 /* Animations */
@@ -279,6 +383,20 @@ header nav .nav-links {
   }
 }
 
+@media screen and (max-width: 1369px) {
+  #contact {
+    margin: auto;
+  }
+
+  #contact img {
+    display: none;
+  }
+
+  #contact .text-content {
+    align-items: center;
+  }
+}
+
 @media screen and (max-width: 1200px) {
   #gallery img {
     grid-row: auto;
@@ -286,7 +404,13 @@ header nav .nav-links {
   }
 
   #gallery .images {
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  }
+}
+
+@media screen and (max-width: 1193px) {
+  #contact .text-content {
+    padding: 0;
   }
 }
 
@@ -302,12 +426,47 @@ header nav .nav-links {
   }
 }
 
+@media screen and (max-width: 799px) {
+  footer .footer-content {
+    text-align: center;
+  }
+
+  footer h2 {
+    padding: 2rem;
+  }
+
+  footer img {
+    padding: 1rem;
+  }
+}
+
 @media screen and (max-width: 719px) {
   html {
     font-size: 65%;
   }
-  header nav ul {
-    display: none;
+
+  header #menu {
+    display: block;
+    cursor: pointer;
+  }
+
+  header .nav-links {
+    background-color: #414141;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    clip-path: circle(50px at 90% 10%);
+  }
+
+  header .nav-links a {
+    color: white;
+    font-size: 3rem;
+    font-weight: 200;
   }
 }
 
