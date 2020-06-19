@@ -307,7 +307,8 @@ header #menu-close {
 
 #contact #submit-btn {
   margin: 2rem 0;
-  padding: 0.2rem 10.4rem;
+  padding: 0.2rem 5rem;
+  width: 100%;
   border: none;
   color: white;
   font-size: 1.5rem;
