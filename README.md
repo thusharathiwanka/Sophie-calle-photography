@@ -1,3 +1,3 @@
 # Sophie-calle-photography
 
-photographer personal website
+Personal Photographer website
